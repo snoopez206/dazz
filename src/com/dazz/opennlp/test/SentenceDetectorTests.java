@@ -3,12 +3,22 @@
  */
 package com.dazz.opennlp.test;
 
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.io.OutputStream;
 
+import opennlp.tools.cmdline.sentdetect.SentenceEvaluationErrorListener;
+import opennlp.tools.sentdetect.SentenceDetectorEvaluationMonitor;
+import opennlp.tools.sentdetect.SentenceDetectorEvaluator;
 import opennlp.tools.sentdetect.SentenceDetectorME;
 import opennlp.tools.sentdetect.SentenceModel;
+import opennlp.tools.sentdetect.SentenceSample;
+import opennlp.tools.sentdetect.SentenceSampleStream;
+import opennlp.tools.util.ObjectStream;
+import opennlp.tools.util.PlainTextByLineStream;
 import opennlp.tools.util.Span;
 
 import org.ofbiz.base.util.Debug;
@@ -23,6 +33,10 @@ public class SentenceDetectorTests extends OFBizTestCase {
         super(name);
     }
 
+    /**
+     * test sent detect
+     * @throws Exception
+     */
     public void testSentDetect() throws Exception {
         File modelFile = FileUtil.getFile("component://dazz/models/en-sent.bin");
         InputStream in = new FileInputStream(modelFile);
@@ -36,6 +50,10 @@ public class SentenceDetectorTests extends OFBizTestCase {
         }
     }
     
+    /**
+     * test sent position detect
+     * @throws Exception
+     */
     public void testSentPosDetect() throws Exception {
         File modelFile = FileUtil.getFile("component://dazz/models/en-sent.bin");
         InputStream in = new FileInputStream(modelFile);
@@ -47,5 +65,44 @@ public class SentenceDetectorTests extends OFBizTestCase {
         for (Span sentence : sentences) {
             Debug.logInfo("sentence: \"" + sentence + "\"", module);
         }
+    }
+    
+    /**
+     * test train
+     * @throws Exception
+     */
+    public void testTrain() throws Exception {
+        File modelFile = FileUtil.getFile("component://dazz/models/en-sent.train");
+        if (!modelFile.exists()) {
+            modelFile.delete();
+        }
+        modelFile.createNewFile();
+        ObjectStream<String> lineStream = new PlainTextByLineStream(new FileInputStream(modelFile), "UTF-8");
+        ObjectStream<SentenceSample> sampleStream = new SentenceSampleStream(lineStream);
+
+        SentenceModel model = SentenceDetectorME.train("en",sampleStream, true, null, 5, 100);
+        OutputStream modelOut = new BufferedOutputStream(new FileOutputStream(modelFile));
+        model.serialize(modelOut);
+    }
+    
+    /**
+     * test evaluate
+     * @throws Exception
+     */
+    public void testEvaluate() throws Exception {
+        final File modelFile = FileUtil.getFile("component://dazz/models/en-sent.bin");
+
+        InputStream in = new FileInputStream(modelFile);
+        SentenceModel model = new SentenceModel(in);
+        
+        SentenceDetectorEvaluationMonitor errorListener = new SentenceEvaluationErrorListener();
+        
+        SentenceDetectorEvaluator evaluator = new SentenceDetectorEvaluator(
+            new SentenceDetectorME(model), errorListener);
+
+        Debug.logInfo("Evaluating ...", module);
+        ObjectStream<String> lineStream = new PlainTextByLineStream(new FileInputStream(modelFile), "UTF-8");
+        ObjectStream<SentenceSample> sampleStream = new SentenceSampleStream(lineStream);
+        evaluator.evaluate(sampleStream);
     }
 }
