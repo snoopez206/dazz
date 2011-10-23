@@ -1,0 +1,11 @@
+<!--
+Licensed to the dazz brainy artificial intelligence
+-->
+
+<test-suite suite-name="Dazztests"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/test-suite.xsd">
+        
+    <test-case case-name="namefinder-tests"><junit-test-suite class-name="com.dazz.opennlp.test.NameFinderTests"/></test-case>
+
+</test-suite>
