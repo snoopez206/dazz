@@ -3,14 +3,29 @@
  */
 package com.dazz.wordnik;
 
+import java.net.URL;
+import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
 
+import javolution.util.FastList;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+import org.ofbiz.base.util.Debug;
+import org.ofbiz.base.util.HttpClient;
+import org.ofbiz.base.util.UtilValidate;
 import org.ofbiz.service.DispatchContext;
 import org.ofbiz.service.ServiceUtil;
 
-public class WordnikServices {
+import com.dazz.wordnik.dao.Word;
+import com.dazz.wordnik.dao.WordImpl;
+import com.dazz.wordnik.util.WordnikUtil;
 
-    public final static String module = WordnikServices.class.getName();
+public class WordServices {
+
+    public final static String module = WordServices.class.getName();
     
     /**
      * get word
@@ -208,20 +223,82 @@ public class WordnikServices {
      * @return
      */
     public static Map<String, Object> randomWords(DispatchContext ctx, Map<String, Object> context) {
-        boolean hasDictionaryDef = (Boolean) context.get("hasDictionaryDef");
+        boolean hasDictionaryDef = false;
         String includePartOfSpeech = (String) context.get("includePartOfSpeech");
         String excludePartOfSpeech = (String) context.get("excludePartOfSpeech");
-        int minCorpusCount = (Integer) context.get("minCorpusCount");
-        int maxCorpusCount = (Integer) context.get("maxCorpusCount");
-        int minDictionaryCount = (Integer) context.get("minDictionaryCount");
-        int maxDictionaryCount = (Integer) context.get("maxDictionaryCount");
-        int minLength = (Integer) context.get("minLength");
-        int maxLength = (Integer) context.get("maxLength");
+        int minCorpusCount = 0;
+        int maxCorpusCount = 20;
+        int minDictionaryCount = 0;
+        int maxDictionaryCount = 20;
+        int minLength = 0;
+        int maxLength = 20;
         String sortBy = (String) context.get("sortBy");
         String sortOrder = (String) context.get("sortOrder");
-        int limit = (Integer) context.get("limit");
+        int limit = 20;
+
+        if (UtilValidate.isNotEmpty(context.get("hasDictionaryDef"))) {
+            hasDictionaryDef = (Boolean) context.get("hasDictionaryDef");
+        }
+        if (UtilValidate.isNotEmpty(context.get("minCorpusCount"))) {
+            minCorpusCount = (Integer) context.get("minCorpusCount");
+        }
+        if (UtilValidate.isNotEmpty(context.get("maxCorpusCount"))) {
+            maxCorpusCount = (Integer) context.get("maxCorpusCount");
+        }
+        if (UtilValidate.isNotEmpty(context.get("minDictionaryCount"))) {
+            minDictionaryCount = (Integer) context.get("minDictionaryCount");
+        }
+        if (UtilValidate.isNotEmpty(context.get("maxDictionaryCount"))) {
+            maxDictionaryCount = (Integer) context.get("maxDictionaryCount");
+        }
+        if (UtilValidate.isNotEmpty(context.get("minLength"))) {
+            minLength = (Integer) context.get("minLength");
+        }
+        if (UtilValidate.isNotEmpty(context.get("maxLength"))) {
+            maxLength = (Integer) context.get("maxLength");
+        }
+        if (UtilValidate.isNotEmpty(context.get("limit"))) {
+            limit = (Integer) context.get("limit");
+        }
         
-        return ServiceUtil.returnSuccess();
+        try {
+            String apiUrl = WordnikUtil.getApiUrl();
+            String apiKey = WordnikUtil.getApiKey();
+            HttpClient httpClient = new HttpClient(new URL(apiUrl + "/randomWords"));
+            httpClient.setHeader("api_key", apiKey);
+            httpClient.setParameter("includePartOfSpeech", includePartOfSpeech);
+            httpClient.setParameter("excludePartOfSpeech", excludePartOfSpeech);
+            httpClient.setParameter("hasDictionaryDef", String.valueOf(hasDictionaryDef));
+            httpClient.setParameter("minCorpusCount", String.valueOf(minCorpusCount));
+            httpClient.setParameter("maxCorpusCount", String.valueOf(maxCorpusCount));
+            httpClient.setParameter("minDictionaryCount", String.valueOf(minDictionaryCount));
+            httpClient.setParameter("maxDictionaryCount", String.valueOf(maxDictionaryCount));
+            httpClient.setParameter("minLength", String.valueOf(minLength));
+            httpClient.setParameter("maxLength", String.valueOf(maxLength));
+            httpClient.setParameter("sortBy", sortBy);
+            httpClient.setParameter("sortOrder", sortOrder);
+            httpClient.setParameter("limit", String.valueOf(limit));
+            String result = httpClient.get();
+
+            List<Word> words = FastList.newInstance();
+            
+            JSONArray jsonArray = JSONArray.fromObject(result);
+            ListIterator<JSONObject> listIter = jsonArray.listIterator();
+            while (listIter.hasNext()) {
+                JSONObject jsonObject = listIter.next();
+                String text = (String) jsonObject.get("word");
+                Word word = new WordImpl();
+                word.setText(text);
+                words.add(word);
+            }
+            
+            Map<String, Object> results = ServiceUtil.returnSuccess();
+            results.put("words", words);
+            return results;
+        } catch (Exception e) {
+            Debug.logError(e, module);
+            return ServiceUtil.returnError(e.getMessage());
+        }
     }
     
     /**
