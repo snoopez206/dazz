@@ -2,10 +2,10 @@
 Licensed to the dazz brainy artificial intelligence
 -->
 
-<test-suite suite-name="documentcategorizertests"
+<test-suite suite-name="wordtests"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/test-suite.xsd">
         
-    <test-case case-name="documentcategorizer-tests"><junit-test-suite class-name="com.dazz.opennlp.test.DocumentCategorizerTests"/></test-case>
+    <test-case case-name="word-tests"><junit-test-suite class-name="com.dazz.wordnik.test.WordTests"/></test-case>
 
 </test-suite>

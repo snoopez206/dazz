@@ -22,6 +22,7 @@
 
     <!-- service resources: model(s), eca(s) and group definitions -->
     <service-resource type="model" loader="main" location="servicedef/wordnik_services.xml"/>
+    <service-resource type="model" loader="main" location="servicedef/opennlp_services.xml"/>
     <service-resource type="model" loader="main" location="servicedef/services.xml"/>
     <!--
     <service-resource type="eca" loader="main" location="servicedef/secas.xml"/>
@@ -29,6 +30,7 @@
     -->
 
     <test-suite loader="main" location="testdef/DazzTests.xml"/>
+    <test-suite loader="main" location="testdef/wordnik/wordtests.xml"/>
     <test-suite loader="main" location="testdef/opennlp/chunkertests.xml"/>
     <test-suite loader="main" location="testdef/opennlp/corporatests.xml"/>
     <test-suite loader="main" location="testdef/opennlp/documentcategorizertests.xml"/>

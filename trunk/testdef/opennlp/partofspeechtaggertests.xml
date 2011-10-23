@@ -2,7 +2,7 @@
 Licensed to the dazz brainy artificial intelligence
 -->
 
-<test-suite suite-name="Dazztests"
+<test-suite suite-name="partofspeechtaggertests"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/test-suite.xsd">
         

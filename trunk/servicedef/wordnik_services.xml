@@ -10,91 +10,92 @@ Licensed to the dazz brainy artificial intelligence
     
     <!-- get word -->
     <service name="getWord" engine="java"
-            location="com.dazz.wordnik.WordnikServices" invoke="getWord">
+            location="com.dazz.wordnik.WordServices" invoke="getWord">
         <description>get word</description>
     </service>
     
     <!-- get word audio -->
     <service name="getWordAudio" engine="java"
-            location="com.dazz.wordnik.WordnikServices" invoke="getWordAudio">
+            location="com.dazz.wordnik.WordServices" invoke="getWordAudio">
         <description>get word audio</description>
     </service>
     
     <!-- get word definitions -->
     <service name="getWordDefinitions" engine="java"
-            location="com.dazz.wordnik.WordnikServices" invoke="getWordDefinitions">
+            location="com.dazz.wordnik.WordServices" invoke="getWordDefinitions">
         <description>get word definitions</description>
     </service>
     
     <!-- get word examples -->
     <service name="getWordExamples" engine="java"
-            location="com.dazz.wordnik.WordnikServices" invoke="getWordExamples">
+            location="com.dazz.wordnik.WordServices" invoke="getWordExamples">
         <description>get word examples</description>
     </service>
     
     <!-- get word frequency -->
     <service name="getWordFrequency" engine="java"
-            location="com.dazz.wordnik.WordnikServices" invoke="getWordFrequency">
+            location="com.dazz.wordnik.WordServices" invoke="getWordFrequency">
         <description>get word frequency</description>
     </service>
     
     <!-- get word hyphenation -->
     <service name="getWordHyphenation" engine="java"
-            location="com.dazz.wordnik.WordnikServices" invoke="getWordHyphenation">
+            location="com.dazz.wordnik.WordServices" invoke="getWordHyphenation">
         <description>get word hyphenation</description>
     </service>
     
     <!-- get word of the day -->
     <service name="getWordOfTheDay" engine="java"
-            location="com.dazz.wordnik.WordnikServices" invoke="getWordOfTheDay">
+            location="com.dazz.wordnik.WordServices" invoke="getWordOfTheDay">
         <description>get word of the day</description>
     </service>
     
     <!-- get word phrases -->
     <service name="getWordPhrases" engine="java"
-            location="com.dazz.wordnik.WordnikServices" invoke="getWordPhrases">
+            location="com.dazz.wordnik.WordServices" invoke="getWordPhrases">
         <description>get word phrases</description>
     </service>
     
     <!-- get word pronunciations -->
     <service name="getWordPronunciations" engine="java"
-            location="com.dazz.wordnik.WordnikServices" invoke="getWordPronunciations">
+            location="com.dazz.wordnik.WordServices" invoke="getWordPronunciations">
         <description>get word pronunciations</description>
     </service>
     
     <!-- get word related -->
     <service name="getWordRelated" engine="java"
-            location="com.dazz.wordnik.WordnikServices" invoke="getWordRelated">
+            location="com.dazz.wordnik.WordServices" invoke="getWordRelated">
         <description>get word related</description>
     </service>
     
     <!-- get word top example -->
     <service name="getWordTopExample" engine="java"
-            location="com.dazz.wordnik.WordnikServices" invoke="getWordTopExample">
+            location="com.dazz.wordnik.WordServices" invoke="getWordTopExample">
         <description>get word top example</description>
     </service>
     
     <!-- random word -->
     <service name="randomWord" engine="java"
-            location="com.dazz.wordnik.WordnikServices" invoke="randomWord">
+            location="com.dazz.wordnik.WordServices" invoke="randomWord">
         <description>random word</description>
     </service>
     
     <!-- random words -->
     <service name="randomWords" engine="java"
-            location="com.dazz.wordnik.WordnikServices" invoke="randomWords">
+            location="com.dazz.wordnik.WordServices" invoke="randomWords">
         <description>random words</description>
+        <attribute name="words" type="List" mode="OUT" optional="false"/>
     </service>
     
     <!-- search query word -->
     <service name="searchQueryWord" engine="java"
-            location="com.dazz.wordnik.WordnikServices" invoke="searchQueryWord">
+            location="com.dazz.wordnik.WordServices" invoke="searchQueryWord">
         <description>search query word</description>
     </service>
     
     <!-- search word -->
     <service name="searchWord" engine="java"
-            location="com.dazz.wordnik.WordnikServices" invoke="searchWord">
+            location="com.dazz.wordnik.WordServices" invoke="searchWord">
         <description>search word</description>
     </service>
     
