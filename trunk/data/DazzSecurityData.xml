@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <SecurityPermission description="View operations in the Dazz Component." permissionId="DAZZ_VIEW"/>
+    <SecurityPermission description="Create operations in the Dazz Component." permissionId="DAZZ_CREATE"/>
+    <SecurityPermission description="Update operations in the Dazz Component." permissionId="DAZZ_UPDATE"/>
+    <SecurityPermission description="Delete operations in the Dazz Component." permissionId="DAZZ_DELETE"/>
+    <SecurityPermission description="ALL operations in the Dazz Component." permissionId="DAZZ_ADMIN"/>
+    <SecurityGroupPermission groupId="FULLADMIN" permissionId="DAZZ_ADMIN"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="DAZZ_CREATE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="DAZZ_DELETE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="DAZZ_UPDATE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="DAZZ_VIEW"/>
+    <SecurityGroupPermission groupId="VIEWADMIN" permissionId="DAZZ_VIEW"/>
+    <SecurityGroupPermission groupId="BIZADMIN" permissionId="DAZZ_ADMIN"/>
+</entity-engine-xml>
