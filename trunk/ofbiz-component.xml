@@ -30,7 +30,7 @@
     -->
 
     <test-suite loader="main" location="testdef/DazzTests.xml"/>
-    <test-suite loader="main" location="testdef/wordnik/wordtests.xml"/>
+    <test-suite loader="main" location="testdef/neural/networkstests.xml"/>
     <test-suite loader="main" location="testdef/opennlp/chunkertests.xml"/>
     <test-suite loader="main" location="testdef/opennlp/corporatests.xml"/>
     <test-suite loader="main" location="testdef/opennlp/documentcategorizertests.xml"/>
@@ -40,6 +40,7 @@
     <test-suite loader="main" location="testdef/opennlp/partofspeechtaggertests.xml"/>
     <test-suite loader="main" location="testdef/opennlp/sentencedetectortests.xml"/>
     <test-suite loader="main" location="testdef/opennlp/tokenizertests.xml"/>
+    <test-suite loader="main" location="testdef/wordnik/wordtests.xml"/>
 
     <!-- web applications; will be mounted when using the embedded container -->
     <webapp name="dazz"
