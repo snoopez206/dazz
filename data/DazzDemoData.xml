@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entity-engine-xml>
-
+    <DataResource dataResourceId="HOW" objectInfo="how"/>
+    <DataResource dataResourceId="MANY" objectInfo="many"/>
+    <DataResource dataResourceId="LEGS" objectInfo="legs"/>
+    <DataResource dataResourceId="DOES" objectInfo="does"/>
+    <DataResource dataResourceId="A" objectInfo="a"/>
+    <DataResource dataResourceId="DOG" objectInfo="dog"/>
+    <DataResource dataResourceId="HAVE" objectInfo="have"/>
 </entity-engine-xml>
