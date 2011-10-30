@@ -10,6 +10,8 @@
             <widgets>
                 <decorator-screen name="DazzCommonDecorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
+                        <include-form name="main" location="component://dazz/widget/DazzForms.xml"/>
+                        <platform-specific><html><html-template location="component://dazz/webapp/dazz/includes/answer.ftl"/></html></platform-specific>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
