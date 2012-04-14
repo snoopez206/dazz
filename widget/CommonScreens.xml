@@ -49,6 +49,7 @@
         </section>
     </screen>
 
+    <!-- Natural Language Decorator Screens -->
     <screen name="NaturalLanguageDecorator">
         <section>
             <actions>
@@ -179,6 +180,7 @@
         </section>
     </screen>
 
+    <!-- Knowledge Base Decorator Screens -->
     <screen name="KnowledgeBaseDecorator">
         <section>
             <actions>
@@ -186,6 +188,65 @@
             </actions>
             <widgets>
                 <decorator-screen name="DazzCommonDecorator">
+                    <decorator-section name="pre-body">
+                        <include-menu name="KnowledgeBase" location="component://dazz/widget/knowledgebase/KnowledgeBaseMenus.xml"/>
+                    </decorator-section>
+                    <decorator-section name="body">
+                        <decorator-section-include name="body"/>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="KnowledgeBaseAssertDecorator">
+        <section>
+            <actions>
+                <set field="tabButtonItem" value="Assert"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="KnowledgeBaseDecorator">
+                    <decorator-section name="body">
+                        <decorator-section-include name="body"/>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="KnowledgeBaseComposeDecorator">
+        <section>
+            <actions>
+                <set field="tabButtonItem" value="Compose"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="KnowledgeBaseDecorator">
+                    <decorator-section name="body">
+                        <decorator-section-include name="body"/>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="KnowledgeBaseConstantDecorator">
+        <section>
+            <actions>
+                <set field="tabButtonItem" value="Constant"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="KnowledgeBaseDecorator">
+                    <decorator-section name="body">
+                        <decorator-section-include name="body"/>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="KnowledgeBaseQueryDecorator">
+        <section>
+            <actions>
+                <set field="tabButtonItem" value="Query"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="KnowledgeBaseDecorator">
                     <decorator-section name="body">
                         <decorator-section-include name="body"/>
                     </decorator-section>

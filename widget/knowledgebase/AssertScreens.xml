@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-screen.xsd">
+    <screen name="FindAssert">
+        <section>
+            <widgets>
+                <decorator-screen name="KnowledgeBaseAssertDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <decorator-screen name="FindScreenDecorator" location="component://common/widget/CommonScreens.xml">
+                            <decorator-section name="menu-bar">
+                                <container style="button-bar"><link target="EditKnowledgeBaseAssertLayer" link-type="ajax-window" height="500" width="500" text="${uiLabelMap.DazzNewKnowledgeBaseAssert}" style="buttontext create"/></container>
+                            </decorator-section>
+                            <decorator-section name="search-options">
+                                <include-form name="FindAsserts" location="component://dazz/widget/knowledgebase/AssertForms.xml"/>
+                            </decorator-section>
+                            <decorator-section name="search-results">
+                                <include-form name="ListAsserts" location="component://dazz/widget/knowledgebase/AssertForms.xml"/>
+                            </decorator-section>
+                        </decorator-screen>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="EditAssertLayer">
+        <section>
+            <actions>
+                <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
+                <set field="titleProperty" value="PageTitleEditAssertLayer"/>
+                <set field="tabButtonItem" value="EditKnowledgeBaseAssert"/>
+            </actions>
+            <widgets>
+                <include-form name="EditAssert" location="component://dazz/widget/knowledgebase/AssertForms.xml"/>
+            </widgets>
+        </section>
+    </screen>
+</screens>

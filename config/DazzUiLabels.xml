@@ -71,4 +71,25 @@
     <property key="DazzKnowledgeBase">
         <value xml:lang="en">Knowledge Base</value>
     </property>
+    <property key="DazzKnowledgeBaseAssert">
+        <value xml:lang="en">Assert</value>
+    </property>
+    <property key="DazzKnowledgeBaseCompose">
+        <value xml:lang="en">Compose</value>
+    </property>
+    <property key="DazzKnowledgeBaseConstant">
+        <value xml:lang="en">Constant</value>
+    </property>
+    <property key="DazzKnowledgeBaseQuery">
+        <value xml:lang="en">Query</value>
+    </property>
+    <property key="DazzNewKnowledgeBaseAssert">
+        <value xml:lang="en">New Assert</value>
+    </property>
+    <property key="DazzNewKnowledgeBaseCompose">
+        <value xml:lang="en">New Compose</value>
+    </property>
+    <property key="DazzNewKnowledgeBaseConstant">
+        <value xml:lang="en">New Constant</value>
+    </property>
 </resource>
