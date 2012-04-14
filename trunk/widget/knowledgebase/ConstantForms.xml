@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-form.xsd">
+    <form name="FindConstants" type="single" target="FindKnowledgeBaseConstant" default-entity-name="Content">
+        <field name="noConditionFind"><hidden value="Y"/><!-- if this isn't there then with all fields empty no query will be done --></field>
+        <field name="searchButton" title="${uiLabelMap.CommonFind}" widget-style="smallSubmit"><submit button-type="button" image-location="/images/icons/magnifier.png"/></field>
+    </form>
+    <form name="ListConstants" type="list" list-name="listIt" paginate-target="FindKnowledgeBaseConstant" default-entity-name="Content" separate-columns="true"
+        odd-row-style="alternate-row" header-row-style="header-row-2" default-table-style="basic-table hover-bar">
+        <actions>
+        </actions>
+    </form>
+    <form name="EditConstant" type="single" target="updateKnowledgeBaseConstant" title="" default-map-name="content" default-entity-name="Content">
+    </form>
+</forms>

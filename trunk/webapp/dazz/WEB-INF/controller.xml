@@ -43,6 +43,14 @@
     
     <!-- Knowledge Base Request Mapping -->
     <request-map uri="KnowledgeBase"><security https="true" auth="true"/><response name="success" type="view" value="KnowledgeBase"/></request-map>
+    <request-map uri="FindKnowledgeBaseAssert"><security https="true" auth="true"/><response name="success" type="view" value="FindKnowledgeBaseAssert"/></request-map>
+    <request-map uri="FindKnowledgeBaseCompose"><security https="true" auth="true"/><response name="success" type="view" value="FindKnowledgeBaseCompose"/></request-map>
+    <request-map uri="FindKnowledgeBaseConstant"><security https="true" auth="true"/><response name="success" type="view" value="FindKnowledgeBaseConstant"/></request-map>
+    <request-map uri="KnowledgeBaseQuery"><security https="true" auth="true"/><response name="success" type="view" value="KnowledgeBaseQuery"/></request-map>
+    
+    <request-map uri="EditKnowledgeBaseAssertLayer"><security https="true" auth="true"/><response name="success" type="view" value="EditKnowledgeBaseAssertLayer"/></request-map>
+    <request-map uri="EditKnowledgeBaseComposeLayer"><security https="true" auth="true"/><response name="success" type="view" value="EditKnowledgeBaseComposeLayer"/></request-map>
+    <request-map uri="EditKnowledgeBaseConstantLayer"><security https="true" auth="true"/><response name="success" type="view" value="EditKnowledgeBaseConstantLayer"/></request-map>
     
     <!-- View Mappings -->
     <view-map name="main" type="screen" page="component://dazz/widget/DazzScreens.xml#main"/>
@@ -67,4 +75,12 @@
     
     <!-- Knowledge Base View Mapping -->
     <view-map name="KnowledgeBase" type="screen" page="component://dazz/widget/knowledgebase/KnowledgeBaseScreens.xml#main"/>
+    <view-map name="FindKnowledgeBaseAssert" type="screen" page="component://dazz/widget/knowledgebase/AssertScreens.xml#FindAssert"/>
+    <view-map name="FindKnowledgeBaseCompose" type="screen" page="component://dazz/widget/knowledgebase/ComposeScreens.xml#FindCompose"/>
+    <view-map name="FindKnowledgeBaseConstant" type="screen" page="component://dazz/widget/knowledgebase/ConstantScreens.xml#FindConstant"/>
+    <view-map name="KnowledgeBaseQuery" type="screen" page="component://dazz/widget/knowledgebase/QueryScreens.xml#Query"/>
+    
+    <view-map name="EditKnowledgeBaseAssertLayer" type="screen" page="component://dazz/widget/knowledgebase/AssertScreens.xml#EditAssertLayer"/>
+    <view-map name="EditKnowledgeBaseComposeLayer" type="screen" page="component://dazz/widget/knowledgebase/ComposeScreens.xml#EditComposeLayer"/>
+    <view-map name="EditKnowledgeBaseConstantLayer" type="screen" page="component://dazz/widget/knowledgebase/ConstantScreens.xml#EditConstantLayer"/>
 </site-conf>
