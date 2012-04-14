@@ -25,6 +25,21 @@
     
     <!-- Natural Language Request Mapping -->
     <request-map uri="NaturalLanguage"><security https="true" auth="true"/><response name="success" type="view" value="NaturalLanguage"/></request-map>
+    <request-map uri="FindNaturalLanguageChunker"><security https="true" auth="true"/><response name="success" type="view" value="FindNaturalLanguageChunker"/></request-map>
+    <request-map uri="FindNaturalLanguageCorpora"><security https="true" auth="true"/><response name="success" type="view" value="FindNaturalLanguageCorpora"/></request-map>
+    <request-map uri="FindNaturalLanguageDocumentCategorizer"><security https="true" auth="true"/><response name="success" type="view" value="FindNaturalLanguageDocumentCategorizer"/></request-map>
+    <request-map uri="FindNaturalLanguageParser"><security https="true" auth="true"/><response name="success" type="view" value="FindNaturalLanguageParser"/></request-map>
+    <request-map uri="FindNaturalLanguagePartOfSpeech"><security https="true" auth="true"/><response name="success" type="view" value="FindNaturalLanguagePartOfSpeech"/></request-map>
+    <request-map uri="FindNaturalLanguageSentenceDetector"><security https="true" auth="true"/><response name="success" type="view" value="FindNaturalLanguageSentenceDetector"/></request-map>
+    <request-map uri="FindNaturalLanguageTokenizer"><security https="true" auth="true"/><response name="success" type="view" value="FindNaturalLanguageTokenizer"/></request-map>
+    
+    <request-map uri="EditNaturalLanguageChunkerLayer"><security https="true" auth="true"/><response name="success" type="view" value="EditNaturalLanguageChunkerLayer"/></request-map>
+    <request-map uri="EditNaturalLanguageCorporaLayer"><security https="true" auth="true"/><response name="success" type="view" value="EditNaturalLanguageCorporaLayer"/></request-map>
+    <request-map uri="EditNaturalLanguageDocumentCategorizerLayer"><security https="true" auth="true"/><response name="success" type="view" value="EditNaturalLanguageDocumentCategorizerLayer"/></request-map>
+    <request-map uri="EditNaturalLanguageParserLayer"><security https="true" auth="true"/><response name="success" type="view" value="EditNaturalLanguageParserLayer"/></request-map>
+    <request-map uri="EditNaturalLanguagePartOfSpeechLayer"><security https="true" auth="true"/><response name="success" type="view" value="EditNaturalLanguagePartOfSpeechLayer"/></request-map>
+    <request-map uri="EditNaturalLanguageSentenceDetectorLayer"><security https="true" auth="true"/><response name="success" type="view" value="EditNaturalLanguageSentenceDetectorLayer"/></request-map>
+    <request-map uri="EditNaturalLanguageTokenizerLayer"><security https="true" auth="true"/><response name="success" type="view" value="EditNaturalLanguageTokenizerLayer"/></request-map>
     
     <!-- Knowledge Base Request Mapping -->
     <request-map uri="KnowledgeBase"><security https="true" auth="true"/><response name="success" type="view" value="KnowledgeBase"/></request-map>
@@ -34,6 +49,21 @@
     
     <!-- Natural Language View Mapping -->
     <view-map name="NaturalLanguage" type="screen" page="component://dazz/widget/naturallanguage/NaturalLanguageScreens.xml#main"/>
+    <view-map name="FindNaturalLanguageChunker" type="screen" page="component://dazz/widget/naturallanguage/ChunkerScreens.xml#FindChunker"/>
+    <view-map name="FindNaturalLanguageCorpora" type="screen" page="component://dazz/widget/naturallanguage/CorporaScreens.xml#FindCorpora"/>
+    <view-map name="FindNaturalLanguageDocumentCategorizer" type="screen" page="component://dazz/widget/naturallanguage/DocumentCategorizerScreens.xml#FindDocumentCategorizer"/>
+    <view-map name="FindNaturalLanguageParser" type="screen" page="component://dazz/widget/naturallanguage/ParserScreens.xml#FindParser"/>
+    <view-map name="FindNaturalLanguagePartOfSpeech" type="screen" page="component://dazz/widget/naturallanguage/PartOfSpeechScreens.xml#FindPartOfSpeech"/>
+    <view-map name="FindNaturalLanguageSentenceDetector" type="screen" page="component://dazz/widget/naturallanguage/SentenceDetectorScreens.xml#FindSentenceDetector"/>
+    <view-map name="FindNaturalLanguageTokenizer" type="screen" page="component://dazz/widget/naturallanguage/TokenizerScreens.xml#FindTokenizer"/>
+    
+    <view-map name="EditNaturalLanguageChunkerLayer" type="screen" page="component://dazz/widget/naturallanguage/ChunkerScreens.xml#EditChunkerLayer"/>
+    <view-map name="EditNaturalLanguageCorporaLayer" type="screen" page="component://dazz/widget/naturallanguage/CorporaScreens.xml#EditCorporaLayer"/>
+    <view-map name="EditNaturalLanguageDocumentCategorizerLayer" type="screen" page="component://dazz/widget/naturallanguage/DocumentCategorizerScreens.xml#EditDocumentCategorizerLayer"/>
+    <view-map name="EditNaturalLanguageParserLayer" type="screen" page="component://dazz/widget/naturallanguage/ParserScreens.xml#EditParserLayer"/>
+    <view-map name="EditNaturalLanguagePartOfSpeechLayer" type="screen" page="component://dazz/widget/naturallanguage/PartOfSpeechScreens.xml#EditPartOfSpeechLayer"/>
+    <view-map name="EditNaturalLanguageSentenceDetectorLayer" type="screen" page="component://dazz/widget/naturallanguage/SentenceDetectorScreens.xml#EditSentenceDetectorLayer"/>
+    <view-map name="EditNaturalLanguageTokenizerLayer" type="screen" page="component://dazz/widget/naturallanguage/TokenizerScreens.xml#EditTokenizerLayer"/>
     
     <!-- Knowledge Base View Mapping -->
     <view-map name="KnowledgeBase" type="screen" page="component://dazz/widget/knowledgebase/KnowledgeBaseScreens.xml#main"/>
