@@ -60,11 +60,119 @@
                         <include-menu name="NaturalLanguage" location="component://dazz/widget/naturallanguage/NaturalLanguageMenus.xml"/>
                     </decorator-section>
                     <decorator-section name="body">
-                        <section>
-                            <widgets>
-                                <decorator-section-include name="body"/>
-                            </widgets>
-                        </section>
+                        <decorator-section-include name="body"/>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="NaturalLanguageChunkerDecorator">
+        <section>
+            <actions>
+                <set field="tabButtonItem" value="Chunker"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="NaturalLanguageDecorator">
+                    <decorator-section name="body">
+                        <decorator-section-include name="body"/>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="NaturalLanguageCorporaDecorator">
+        <section>
+            <actions>
+                <set field="tabButtonItem" value="Corpora"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="NaturalLanguageDecorator">
+                    <decorator-section name="body">
+                        <decorator-section-include name="body"/>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="NaturalLanguageDocumentCategorizerDecorator">
+        <section>
+            <actions>
+                <set field="tabButtonItem" value="DocumentCategorizer"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="NaturalLanguageDecorator">
+                    <decorator-section name="body">
+                        <decorator-section-include name="body"/>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="NaturalLanguageNameFinderDecorator">
+        <section>
+            <actions>
+                <set field="tabButtonItem" value="NameFinder"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="NaturalLanguageDecorator">
+                    <decorator-section name="body">
+                        <decorator-section-include name="body"/>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="NaturalLanguageParserDecorator">
+        <section>
+            <actions>
+                <set field="tabButtonItem" value="Parser"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="NaturalLanguageDecorator">
+                    <decorator-section name="body">
+                        <decorator-section-include name="body"/>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="NaturalLanguagePartOfSpeechDecorator">
+        <section>
+            <actions>
+                <set field="tabButtonItem" value="PartOfSpeech"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="NaturalLanguageDecorator">
+                    <decorator-section name="body">
+                        <decorator-section-include name="body"/>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="NaturalLanguageSentenceDetectorDecorator">
+        <section>
+            <actions>
+                <set field="tabButtonItem" value="SentenceDetector"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="NaturalLanguageDecorator">
+                    <decorator-section name="body">
+                        <decorator-section-include name="body"/>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    <screen name="NaturalLanguageTokenizerDecorator">
+        <section>
+            <actions>
+                <set field="tabButtonItem" value="Tokenizer"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="NaturalLanguageDecorator">
+                    <decorator-section name="body">
+                        <decorator-section-include name="body"/>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
@@ -79,11 +187,7 @@
             <widgets>
                 <decorator-screen name="DazzCommonDecorator">
                     <decorator-section name="body">
-                        <section>
-                            <widgets>
-                                <decorator-section-include name="body"/>
-                            </widgets>
-                        </section>
+                        <decorator-section-include name="body"/>
                     </decorator-section>
                 </decorator-screen>
             </widgets>

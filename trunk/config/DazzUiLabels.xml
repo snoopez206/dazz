@@ -34,13 +34,37 @@
         <value xml:lang="en">Parser</value>
     </property>
     <property key="DazzNaturalLanguagePartOfSpeech">
-        <value xml:lang="en">Part Of Speech</value>
+        <value xml:lang="en">Part of Speech</value>
     </property>
     <property key="DazzNaturalLanguageSentenceDetector">
         <value xml:lang="en">Sentence Detector</value>
     </property>
     <property key="DazzNaturalLanguageTokenizer">
         <value xml:lang="en">Tokenizer</value>
+    </property>
+    <property key="DazzNewNaturalLanguageChunker">
+        <value xml:lang="en">New Chunker</value>
+    </property>
+    <property key="DazzNewNaturalLanguageCorpora">
+        <value xml:lang="en">New Corpora</value>
+    </property>
+    <property key="DazzNewNaturalLanguageDocumentCategorizer">
+        <value xml:lang="en">New Document Categorizer</value>
+    </property>
+    <property key="DazzNewNaturalLanguageNameFinder">
+        <value xml:lang="en">New Name Finder</value>
+    </property>
+    <property key="DazzNewNaturalLanguageParser">
+        <value xml:lang="en">New Parser</value>
+    </property>
+    <property key="DazzNewNaturalLanguagePartOfSpeech">
+        <value xml:lang="en">New Part of Speech</value>
+    </property>
+    <property key="DazzNewNaturalLanguageSentenceDetector">
+        <value xml:lang="en">New Sentence Detector</value>
+    </property>
+    <property key="DazzNewNaturalLanguageTokenizer">
+        <value xml:lang="en">New Tokenizer</value>
     </property>
     
     <!-- Knowledge Base -->
