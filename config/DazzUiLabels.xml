@@ -16,9 +16,34 @@
         <value xml:lang="en">You are not allowed to view this page.</value>
         <value xml:lang="zh">不允许你浏览这个页面。</value>
     </property>
+    
+    <!-- Natural Language -->
     <property key="DazzNaturalLanguage">
         <value xml:lang="en">Natural Language</value>
     </property>
+    <property key="DazzNaturalLanguageChunker">
+        <value xml:lang="en">Chunker</value>
+    </property>
+    <property key="DazzNaturalLanguageCorpora">
+        <value xml:lang="en">Corpora</value>
+    </property>
+    <property key="DazzNaturalLanguageDocumentCategorizer">
+        <value xml:lang="en">Document Categorizer</value>
+    </property>
+    <property key="DazzNaturalLanguageParser">
+        <value xml:lang="en">Parser</value>
+    </property>
+    <property key="DazzNaturalLanguagePartOfSpeech">
+        <value xml:lang="en">Part Of Speech</value>
+    </property>
+    <property key="DazzNaturalLanguageSentenceDetector">
+        <value xml:lang="en">Sentence Detector</value>
+    </property>
+    <property key="DazzNaturalLanguageTokenizer">
+        <value xml:lang="en">Tokenizer</value>
+    </property>
+    
+    <!-- Knowledge Base -->
     <property key="DazzKnowledgeBase">
         <value xml:lang="en">Knowledge Base</value>
     </property>
