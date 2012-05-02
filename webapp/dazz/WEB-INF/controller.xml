@@ -47,6 +47,12 @@
     <request-map uri="FindKnowledgeBaseCompose"><security https="true" auth="true"/><response name="success" type="view" value="FindKnowledgeBaseCompose"/></request-map>
     <request-map uri="FindKnowledgeBaseConstant"><security https="true" auth="true"/><response name="success" type="view" value="FindKnowledgeBaseConstant"/></request-map>
     <request-map uri="KnowledgeBaseQuery"><security https="true" auth="true"/><response name="success" type="view" value="KnowledgeBaseQuery"/></request-map>
+    <request-map uri="queryKnowledgeBase">
+        <security https="true" auth="true"/>
+        <event type="java" path="com.dazz.knowledgebase.KnowledgeBaseEvents" invoke="query"/>
+        <response name="success" type="view" value="KnowledgeBaseQuery"/>
+        <response name="error" type="view" value="KnowledgeBaseQuery"/>
+    </request-map>
     
     <request-map uri="EditKnowledgeBaseAssertLayer"><security https="true" auth="true"/><response name="success" type="view" value="EditKnowledgeBaseAssertLayer"/></request-map>
     <request-map uri="EditKnowledgeBaseComposeLayer"><security https="true" auth="true"/><response name="success" type="view" value="EditKnowledgeBaseComposeLayer"/></request-map>

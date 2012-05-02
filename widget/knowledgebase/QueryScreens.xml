@@ -7,6 +7,7 @@
                 <decorator-screen name="KnowledgeBaseQueryDecorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                         <include-form name="Query" location="component://dazz/widget/knowledgebase/QueryForms.xml"/>
+                        <include-form name="QueryResult" location="component://dazz/widget/knowledgebase/QueryForms.xml"/>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
