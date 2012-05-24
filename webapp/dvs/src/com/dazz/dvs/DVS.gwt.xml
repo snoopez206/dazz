@@ -23,6 +23,7 @@
     <inherits name='org.thechiselgroup.choosel.visualization_component.graph.Graph'/>
     <inherits name='org.thechiselgroup.choosel.visualization_component.text.Text'/>
     <inherits name='org.thechiselgroup.choosel.visualization_component.timeline.Timeline'/>
+    <inherits name="org.thechiselgroup.choosel.protovis.ProtovisGWT" />
   
     <entry-point class='com.dazz.dvs.client.DVSEntryPoint'/>
 
