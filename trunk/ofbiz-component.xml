@@ -39,4 +39,10 @@
         location="webapp/dazz"
         base-permission="OFBTOOLS"
         mount-point="/dazz"/>
+    <webapp name="dvs"
+        title="DVS"
+        server="default-server"
+        location="webapp/dvs"
+        base-permission="OFBTOOLS"
+        mount-point="/dvs"/>
 </ofbiz-component>

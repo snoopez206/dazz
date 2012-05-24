@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="dvs" default="build" basedir=".">
+  <!-- Arguments to gwtc and devmode targets -->
+  <property name="module.name" value="com.dazz.dvs.DVS" />
+  <property name="war.dir" value="images/${module.name}" />
+  <property name="gwt.args" value="-war images" />
+  <!-- Configure path to GWT SDK -->
+  <property name="gwt.sdk" location="../../lib" />
+  <property name="src.dir" value="src" />
+  <property name="build.dir" value="build" />
+
+  <path id="project.class.path">
+    <fileset dir="${gwt.sdk}" includes="*.jar"/>
+  </path>
+
+  <target name="libs" description="Copy libs to WEB-INF/lib">
+    <mkdir dir="${war.dir}/WEB-INF/lib" />
+    <!-- Add any additional server libs that need to be copied -->
+  </target>
+
+  <target name="javac" depends="libs" description="Compile java source">
+    <mkdir dir="${build.dir}/classes"/>
+    <javac srcdir="src" includes="**" encoding="utf-8"
+        destdir="${build.dir}/classes"
+        source="1.5" target="1.5" nowarn="true"
+        debug="true" debuglevel="lines,vars,source">
+      <classpath refid="project.class.path"/>
+    </javac>
+    <copy todir="${build.dir}/classes">
+      <fileset dir="src" excludes="**/*.java"/>
+    </copy>
+  </target>
+
+  <target name="gwtc" depends="javac" description="GWT compile to JavaScript">
+    <java failonerror="true" fork="true" classname="com.google.gwt.dev.Compiler">
+      <classpath>
+        <pathelement location="src"/>
+        <path refid="project.class.path"/>
+      </classpath>
+      <!-- add jvmarg -Xss16M or similar if you see a StackOverflowError -->
+      <jvmarg value="-Xmx512M"/>
+      <!-- Additional arguments like -style PRETTY or -logLevel DEBUG -->
+      <arg line="${gwt.args}"/>
+      <arg value="${module.name}"/>
+    </java>
+  </target>
+
+  <target name="devmode" depends="javac" description="Run development mode">
+    <java failonerror="true" fork="true" classname="com.google.gwt.dev.DevMode">
+      <classpath>
+        <pathelement location="src"/>
+        <path refid="project.class.path"/>
+      </classpath>
+      <jvmarg value="-Xmx512M"/>
+      <arg value="-startupUrl"/>
+      <arg value="https://localhost:8443/dvs?gwt.codesvr=127.0.0.1:9997"/>
+      <!-- Additional arguments like -style PRETTY or -logLevel DEBUG -->
+      <arg line="${gwt.args} -noserver"/>
+      <arg value="${module.name}"/>
+    </java>
+  </target>
+    
+  <target name="build" depends="gwtc" description="Build this project" />
+  <target name="clean" description="Cleans this project">
+    <delete dir="images/${module.name}" failonerror="false" />
+    <delete dir="${build.dir}" failonerror="false" />
+  </target>
+
+</project>
