@@ -36,6 +36,10 @@ import org.thechiselgroup.choosel.protovis.client.ProtovisWidget;
 
 import com.google.gwt.user.client.ui.Widget;
 
+/*
+ * Reference:
+ * http://mbostock.github.com/protovis/jsdoc/symbols/pv.Layout.Network.html
+ */
 public class ForceDirectedLayoutExample extends ProtovisWidget {
 
     private PVForceLayout force = null;
@@ -146,10 +150,10 @@ public class ForceDirectedLayoutExample extends ProtovisWidget {
     }
 
     NovelCharacter[] CHARACTERS = new NovelCharacter[] {
-            new NovelCharacter("Myriel", 1), new NovelCharacter("Napoleon", 1),
-            new NovelCharacter("Mlle. Baptistine", 1),
-            new NovelCharacter("Mme. Magloire", 1),
-            new NovelCharacter("Countess de Lo", 1),
+            new NovelCharacter("Myriel", 1), new NovelCharacter("Napoleon", 2),
+            new NovelCharacter("Mlle. Baptistine", 3),
+            new NovelCharacter("Mme. Magloire", 4),
+            new NovelCharacter("Countess de Lo", 5)/*,
             new NovelCharacter("Geborand", 1),
             new NovelCharacter("Champtercier", 1),
             new NovelCharacter("Cravatte", 1), new NovelCharacter("Count", 1),
@@ -209,10 +213,10 @@ public class ForceDirectedLayoutExample extends ProtovisWidget {
             new NovelCharacter("Toussaint", 5),
             new NovelCharacter("Child 1", 10),
             new NovelCharacter("Child 2", 10), new NovelCharacter("Brujon", 4),
-            new NovelCharacter("Mme. Hucheloup", 8) };
+            new NovelCharacter("Mme. Hucheloup", 8)*/ };
 
     Link[] LINKS = new Link[] { new Link(1, 0, 1),
-            new Link(2, 0, 8), new Link(3, 0, 10), new Link(3, 2, 6),
+            new Link(2, 0, 1), new Link(3, 2, 1), new Link(2, 4, 1)/*,
             new Link(4, 0, 1), new Link(5, 0, 1), new Link(6, 0, 1),
             new Link(7, 0, 1), new Link(8, 0, 2), new Link(9, 0, 1),
             new Link(11, 10, 1), new Link(11, 3, 3), new Link(11, 2, 3),
@@ -296,6 +300,6 @@ public class ForceDirectedLayoutExample extends ProtovisWidget {
             new Link(75, 41, 1), new Link(75, 70, 1), new Link(75, 71, 1),
             new Link(76, 64, 1), new Link(76, 65, 1), new Link(76, 66, 1),
             new Link(76, 63, 1), new Link(76, 62, 1), new Link(76, 48, 1),
-            new Link(76, 58, 1) };
+            new Link(76, 58, 1) */};
 
 }
