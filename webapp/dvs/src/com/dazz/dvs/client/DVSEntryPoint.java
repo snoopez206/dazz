@@ -24,9 +24,9 @@ import com.google.gwt.user.client.ui.RootPanel;
 
 public class DVSEntryPoint implements EntryPoint {
 
-	@Override
-	public void onModuleLoad() {
-		RootPanel.get().add(new ForceDirectedLayoutExample());
-	}
+    @Override
+    public void onModuleLoad() {
+        RootPanel.get().add(new ForceDirectedLayoutExample());
+    }
 
 }
