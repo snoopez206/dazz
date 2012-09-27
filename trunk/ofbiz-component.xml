@@ -29,7 +29,6 @@
     -->
 
     <test-suite loader="main" location="testdef/DazzTests.xml"/>
-    <test-suite loader="main" location="testdef/knowledgebase/querytests.xml"/>
     <test-suite loader="main" location="testdef/wordnik/wordtests.xml"/>
 
     <!-- web applications; will be mounted when using the embedded container -->
