@@ -5,4 +5,7 @@
     <test-case case-name="test-rdf">
         <junit-test-suite class-name="com.dazz.rdf.RdfTests"/>
     </test-case>
+    <test-case case-name="test-nlp">
+        <junit-test-suite class-name="com.dazz.nlp.NlpTests"/>
+    </test-case>
 </test-suite>

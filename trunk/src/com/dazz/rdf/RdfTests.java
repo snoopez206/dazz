@@ -68,6 +68,7 @@ public class RdfTests extends OFBizTestCase {
         Debug.logInfo("=== Query Result: " + queryResult, module);
     }
 
+    /*
     public void testQueryOntModelContent() throws Exception {
         String queryString = "prefix pizza:<http://www.co-ode.org/ontologies/pizza/pizza.owl#>"
                 + "prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>"
@@ -85,4 +86,5 @@ public class RdfTests extends OFBizTestCase {
         String queryResult = out.toString();
         Debug.logInfo("=== Query Result: " + queryResult, module);
     }
+    */
 }
