@@ -6,4 +6,7 @@
     <test-case case-name="test-analysis-engine">
         <junit-test-suite class-name="com.dazz.socialqa.uima.AnalysisEngineTest"/>
     </test-case>
+    <test-case case-name="test-opennlp">
+        <junit-test-suite class-name="com.dazz.socialqa.opennlp.OpenNlpTest"/>
+    </test-case>
 </test-suite>
