@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<test-suite suite-name="SocialQatests"
+<test-suite suite-name="SocialQaTests"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/test-suite.xsd">
 
-
+    <test-case case-name="test-analysis-engine">
+        <junit-test-suite class-name="com.dazz.socialqa.uima.AnalysisEngineTest"/>
+    </test-case>
 </test-suite>
