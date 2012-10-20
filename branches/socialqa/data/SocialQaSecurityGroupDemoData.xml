@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <SecurityGroupPermission groupId="FULLADMIN" permissionId="SOCIALQA_ADMIN"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="SOCIALQA_CREATE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="SOCIALQA_DELETE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="SOCIALQA_UPDATE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="SOCIALQA_VIEW"/>
+    <SecurityGroupPermission groupId="VIEWADMIN" permissionId="SOCIALQA_VIEW"/>
+    <SecurityGroupPermission groupId="BIZADMIN" permissionId="SOCIALQA_ADMIN"/>
+</entity-engine-xml>

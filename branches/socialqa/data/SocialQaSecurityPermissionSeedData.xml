@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <SecurityPermission description="View operations in the SocialQa Component." permissionId="SOCIALQA_VIEW"/>
+    <SecurityPermission description="Create operations in the SocialQa Component." permissionId="SOCIALQA_CREATE"/>
+    <SecurityPermission description="Update operations in the SocialQa Component." permissionId="SOCIALQA_UPDATE"/>
+    <SecurityPermission description="Delete operations in the SocialQa Component." permissionId="SOCIALQA_DELETE"/>
+    <SecurityPermission description="ALL operations in the SocialQa Component." permissionId="SOCIALQA_ADMIN"/>
+
+    <SecurityGroupPermission groupId="SUPER" permissionId="SOCIALQA_ADMIN"/>
+
+</entity-engine-xml>
