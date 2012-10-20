@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="OFBiz - Dazz Component" default="jar" basedir=".">
+<project name="OFBiz - SocialQa Component" default="jar" basedir=".">
     <import file="../../common.xml"/>
 
     <!-- ================================================================== -->
@@ -8,9 +8,9 @@
     <!-- ================================================================== -->
 
     <property environment="env"/>
-    <property name="desc" value="Dazz Component"/>
-    <property name="name" value="dazz"/>
-    <property name="component-name" value="dazz"/>
+    <property name="desc" value="SocialQa Component"/>
+    <property name="name" value="socialqa"/>
+    <property name="component-name" value="socialqa"/>
     <property name="ofbiz.home.dir" value="../.."/>
     <property name="src.dir" value="src"/>
     <property name="dtd.dir" value="dtd"/>
@@ -31,7 +31,6 @@
         <fileset dir="../../framework/widget/build/lib" includes="*.jar"/>
         <fileset dir="../../framework/webapp/lib" includes="*.jar"/>
         <fileset dir="../../framework/webapp/build/lib" includes="*.jar"/>
-        <fileset dir="../../applications/content/build/lib" includes="*.jar"/>
     </path>
 
     <!-- ================================================================= -->
@@ -95,10 +94,10 @@
                 </or>
             </condition>
         </fail>
-        <patch strip="0" patchfile="patches/root.patch" dir="${ofbiz.home.dir}"/>
-        <patch strip="0" patchfile="patches/framework.patch" dir="${ofbiz.home.dir}"/>
-        <patch strip="0" patchfile="patches/applications.patch" dir="${ofbiz.home.dir}"/>
-        <patch strip="0" patchfile="patches/specialpurpose.patch" dir="${ofbiz.home.dir}"/>
+        <patch strip="0" patchfile="patches/root.patch" dir="${ofbiz.home.dir}" failonerror="true"/>
+        <patch strip="0" patchfile="patches/framework.patch" dir="${ofbiz.home.dir}" failonerror="true"/>
+        <patch strip="0" patchfile="patches/applications.patch" dir="${ofbiz.home.dir}" failonerror="true"/>
+        <patch strip="0" patchfile="patches/specialpurpose.patch" dir="${ofbiz.home.dir}" failonerror="true"/>
         <delete>          
             <fileset dir="${ofbiz.home.dir}" includes="**/*.rej"/>
         </delete>
@@ -119,10 +118,5 @@
         </fail>
         <antcall target="revert-ofbiz-patches"/>
         <antcall target="apply-ofbiz-patches"/>
-    </target>
-
-    <target name="jar" depends="classes">
-        <main-jar/>
-        <test-jar/>
     </target>
 </project>

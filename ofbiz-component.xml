@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ofbiz-component name="dazz"
+<ofbiz-component name="socialqa"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/ofbiz-component.xsd">
     <!-- define resource loaders; most common is to use the component resource loader -->
@@ -16,32 +16,25 @@
     <!-- entity resources: model(s), eca(s), group, and data definitions -->
     <entity-resource type="model" reader-name="main" loader="main" location="entitydef/entitymodel.xml"/>
     <!-- <entity-resource type="eca" reader-name="main" loader="main" location="entitydef/eecas.xml"/> -->
-    <entity-resource type="data" reader-name="seed" loader="main" location="data/DazzTypeData.xml"/>
-    <entity-resource type="data" reader-name="seed" loader="main" location="data/DazzSecurityData.xml"/>
-    <entity-resource type="data" reader-name="demo" loader="main" location="data/DazzDemoData.xml"/>
+    <entity-resource type="data" reader-name="seed" loader="main" location="data/SocialQaTypeData.xml"/>
+    <entity-resource type="data" reader-name="seed" loader="main" location="data/SocialQaSecurityPermissionSeedData.xml"/>
+    <entity-resource type="data" reader-name="demo" loader="main" location="data/SocialQaSecurityGroupDemoData.xml"/>
+    <entity-resource type="data" reader-name="demo" loader="main" location="data/SocialQaDemoData.xml"/>
 
     <!-- service resources: model(s), eca(s) and group definitions -->
     <service-resource type="model" loader="main" location="servicedef/services.xml"/>
-    <service-resource type="model" loader="main" location="servicedef/services_wordnik.xml"/>
     <!--
     <service-resource type="eca" loader="main" location="servicedef/secas.xml"/>
     <service-resource type="group" loader="main" location="servicedef/groups.xml"/>
     -->
 
-    <test-suite loader="main" location="testdef/DazzTests.xml"/>
-    <test-suite loader="main" location="testdef/wordnik/wordtests.xml"/>
+    <test-suite loader="main" location="testdef/SocialQaTests.xml"/>
 
     <!-- web applications; will be mounted when using the embedded container -->
-    <webapp name="dazz"
-        title="Dazz"
+    <webapp name="socialqa"
+        title="SocialQa"
         server="default-server"
-        location="webapp/dazz"
-        base-permission="OFBTOOLS"
-        mount-point="/dazz"/>
-    <webapp name="dvs"
-        title="DVS"
-        server="default-server"
-        location="webapp/dvs"
-        base-permission="OFBTOOLS"
-        mount-point="/dvs"/>
+        location="webapp/socialqa"
+        base-permission="OFBTOOLS,SOCIALQA"
+        mount-point="/socialqa"/>
 </ofbiz-component>

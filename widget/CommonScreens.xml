@@ -5,16 +5,16 @@
     <screen name="main-decorator">
         <section>
             <actions>
-                <property-map resource="DazzUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="SocialQaUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
 
-                <set field="layoutSettings.companyName" from-field="uiLabelMap.DazzCompanyName" global="true"/>
-                <set field="layoutSettings.companySubtitle" from-field="uiLabelMap.DazzCompanySubtitle" global="true"/>
+                <set field="layoutSettings.companyName" from-field="uiLabelMap.SocialQaCompanyName" global="true"/>
+                <set field="layoutSettings.companySubtitle" from-field="uiLabelMap.SocialQaCompanySubtitle" global="true"/>
 
-                <set field="activeApp" value="dazz" global="true"/>
+                <set field="activeApp" value="socialqa" global="true"/>
                 <set field="applicationMenuName" value="MainAppBar" global="true"/>
-                <set field="applicationMenuLocation" value="component://dazz/widget/DazzMenus.xml" global="true"/>
-                <set field="applicationTitle" value="${uiLabelMap.DazzApplication}" global="true"/>
+                <set field="applicationMenuLocation" value="component://socialqa/widget/SocialQaMenus.xml" global="true"/>
+                <set field="applicationTitle" value="${uiLabelMap.SocialQaApplication}" global="true"/>
             </actions>
             <widgets>
                 <include-screen name="ApplicationDecorator" location="component://commonext/widget/CommonScreens.xml"/>
@@ -22,233 +22,24 @@
         </section>
     </screen>
 
-    <screen name="DazzCommonDecorator">
+    <screen name="SocialQaCommonDecorator">
         <section>
             <actions>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
-                    <decorator-section name="pre-body">
-                        <decorator-section-include name="pre-body"/>
-                    </decorator-section>
                     <decorator-section name="body">
                         <section>
                             <condition>
-                                <if-has-permission permission="DAZZ" action="_VIEW"/>
+                                <if-has-permission permission="SOCIALQA" action="_VIEW"/>
                             </condition>
                             <widgets>
                                 <decorator-section-include name="body"/>
                             </widgets>
                             <fail-widgets>
-                                <label style="h3">${uiLabelMap.DazzViewPermissionError}</label>
+                                <label style="h3">${uiLabelMap.SocialQaViewPermissionError}</label>
                             </fail-widgets>
                         </section>
-                    </decorator-section>
-                </decorator-screen>
-            </widgets>
-        </section>
-    </screen>
-
-    <!-- Natural Language Decorator Screens -->
-    <screen name="NaturalLanguageDecorator">
-        <section>
-            <actions>
-                <set field="headerItem" value="NaturalLanguage"/>
-            </actions>
-            <widgets>
-                <decorator-screen name="DazzCommonDecorator">
-                    <decorator-section name="pre-body">
-                        <include-menu name="NaturalLanguage" location="component://dazz/widget/naturallanguage/NaturalLanguageMenus.xml"/>
-                    </decorator-section>
-                    <decorator-section name="body">
-                        <decorator-section-include name="body"/>
-                    </decorator-section>
-                </decorator-screen>
-            </widgets>
-        </section>
-    </screen>
-    <screen name="NaturalLanguageChunkerDecorator">
-        <section>
-            <actions>
-                <set field="tabButtonItem" value="Chunker"/>
-            </actions>
-            <widgets>
-                <decorator-screen name="NaturalLanguageDecorator">
-                    <decorator-section name="body">
-                        <decorator-section-include name="body"/>
-                    </decorator-section>
-                </decorator-screen>
-            </widgets>
-        </section>
-    </screen>
-    <screen name="NaturalLanguageCorporaDecorator">
-        <section>
-            <actions>
-                <set field="tabButtonItem" value="Corpora"/>
-            </actions>
-            <widgets>
-                <decorator-screen name="NaturalLanguageDecorator">
-                    <decorator-section name="body">
-                        <decorator-section-include name="body"/>
-                    </decorator-section>
-                </decorator-screen>
-            </widgets>
-        </section>
-    </screen>
-    <screen name="NaturalLanguageDocumentCategorizerDecorator">
-        <section>
-            <actions>
-                <set field="tabButtonItem" value="DocumentCategorizer"/>
-            </actions>
-            <widgets>
-                <decorator-screen name="NaturalLanguageDecorator">
-                    <decorator-section name="body">
-                        <decorator-section-include name="body"/>
-                    </decorator-section>
-                </decorator-screen>
-            </widgets>
-        </section>
-    </screen>
-    <screen name="NaturalLanguageNameFinderDecorator">
-        <section>
-            <actions>
-                <set field="tabButtonItem" value="NameFinder"/>
-            </actions>
-            <widgets>
-                <decorator-screen name="NaturalLanguageDecorator">
-                    <decorator-section name="body">
-                        <decorator-section-include name="body"/>
-                    </decorator-section>
-                </decorator-screen>
-            </widgets>
-        </section>
-    </screen>
-    <screen name="NaturalLanguageParserDecorator">
-        <section>
-            <actions>
-                <set field="tabButtonItem" value="Parser"/>
-            </actions>
-            <widgets>
-                <decorator-screen name="NaturalLanguageDecorator">
-                    <decorator-section name="body">
-                        <decorator-section-include name="body"/>
-                    </decorator-section>
-                </decorator-screen>
-            </widgets>
-        </section>
-    </screen>
-    <screen name="NaturalLanguagePartOfSpeechDecorator">
-        <section>
-            <actions>
-                <set field="tabButtonItem" value="PartOfSpeech"/>
-            </actions>
-            <widgets>
-                <decorator-screen name="NaturalLanguageDecorator">
-                    <decorator-section name="body">
-                        <decorator-section-include name="body"/>
-                    </decorator-section>
-                </decorator-screen>
-            </widgets>
-        </section>
-    </screen>
-    <screen name="NaturalLanguageSentenceDetectorDecorator">
-        <section>
-            <actions>
-                <set field="tabButtonItem" value="SentenceDetector"/>
-            </actions>
-            <widgets>
-                <decorator-screen name="NaturalLanguageDecorator">
-                    <decorator-section name="body">
-                        <decorator-section-include name="body"/>
-                    </decorator-section>
-                </decorator-screen>
-            </widgets>
-        </section>
-    </screen>
-    <screen name="NaturalLanguageTokenizerDecorator">
-        <section>
-            <actions>
-                <set field="tabButtonItem" value="Tokenizer"/>
-            </actions>
-            <widgets>
-                <decorator-screen name="NaturalLanguageDecorator">
-                    <decorator-section name="body">
-                        <decorator-section-include name="body"/>
-                    </decorator-section>
-                </decorator-screen>
-            </widgets>
-        </section>
-    </screen>
-
-    <!-- Knowledge Base Decorator Screens -->
-    <screen name="KnowledgeBaseDecorator">
-        <section>
-            <actions>
-                <set field="headerItem" value="KnowledgeBase"/>
-            </actions>
-            <widgets>
-                <decorator-screen name="DazzCommonDecorator">
-                    <decorator-section name="pre-body">
-                        <include-menu name="KnowledgeBase" location="component://dazz/widget/knowledgebase/KnowledgeBaseMenus.xml"/>
-                    </decorator-section>
-                    <decorator-section name="body">
-                        <decorator-section-include name="body"/>
-                    </decorator-section>
-                </decorator-screen>
-            </widgets>
-        </section>
-    </screen>
-    <screen name="KnowledgeBaseAssertDecorator">
-        <section>
-            <actions>
-                <set field="tabButtonItem" value="Assert"/>
-            </actions>
-            <widgets>
-                <decorator-screen name="KnowledgeBaseDecorator">
-                    <decorator-section name="body">
-                        <decorator-section-include name="body"/>
-                    </decorator-section>
-                </decorator-screen>
-            </widgets>
-        </section>
-    </screen>
-    <screen name="KnowledgeBaseComposeDecorator">
-        <section>
-            <actions>
-                <set field="tabButtonItem" value="Compose"/>
-            </actions>
-            <widgets>
-                <decorator-screen name="KnowledgeBaseDecorator">
-                    <decorator-section name="body">
-                        <decorator-section-include name="body"/>
-                    </decorator-section>
-                </decorator-screen>
-            </widgets>
-        </section>
-    </screen>
-    <screen name="KnowledgeBaseConstantDecorator">
-        <section>
-            <actions>
-                <set field="tabButtonItem" value="Constant"/>
-            </actions>
-            <widgets>
-                <decorator-screen name="KnowledgeBaseDecorator">
-                    <decorator-section name="body">
-                        <decorator-section-include name="body"/>
-                    </decorator-section>
-                </decorator-screen>
-            </widgets>
-        </section>
-    </screen>
-    <screen name="KnowledgeBaseQueryDecorator">
-        <section>
-            <actions>
-                <set field="tabButtonItem" value="Query"/>
-            </actions>
-            <widgets>
-                <decorator-screen name="KnowledgeBaseDecorator">
-                    <decorator-section name="body">
-                        <decorator-section-include name="body"/>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
