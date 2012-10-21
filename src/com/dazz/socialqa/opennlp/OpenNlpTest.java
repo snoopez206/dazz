@@ -66,8 +66,8 @@ public class OpenNlpTest extends OFBizTestCase {
         ae.destroy();
     }
 
-    public void testChunker() throws Exception {
-        File taeDescriptor = FileUtil.getFile("component://socialqa/uima/descriptors/opennlp/Chunker.xml");
+    public void testOpenNlpTextAnalyzer() throws Exception {
+        File taeDescriptor = FileUtil.getFile("component://socialqa/uima/descriptors/opennlp/OpenNlpTextAnalyzer.xml");
         File inputFile = FileUtil.getFile("component://socialqa/webapp/socialqa/example/data/Apache_UIMA.txt");
         processTAE(taeDescriptor, inputFile);
     }
