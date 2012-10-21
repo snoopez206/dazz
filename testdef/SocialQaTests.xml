@@ -9,4 +9,7 @@
     <test-case case-name="test-opennlp">
         <junit-test-suite class-name="com.dazz.socialqa.opennlp.OpenNlpTest"/>
     </test-case>
+    <test-case case-name="test-jena">
+        <junit-test-suite class-name="com.dazz.socialqa.jena.JenaTest"/>
+    </test-case>
 </test-suite>
